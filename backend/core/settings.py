@@ -81,16 +81,24 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     "allauth.account.middleware.AccountMiddleware",
-
-
 ]
 
 CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:3000").split(",")
 CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", "http://localhost:3000").split(",")
 
+CORS_ALLOW_ALL_ORIGINS = True # CHANGE THIS IN PRODUCTION  
+
+from corsheaders.defaults import default_headers
+
+CORS_ALLOW_HEADERS = (
+    *default_headers,
+    "x-session-token",
+    "x-email-verification-key",
+    "x-password-reset-key",
+)
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOW_ALL_ORIGINS = True # CHANGE THIS IN PRODUCTION  
+
 
 ROOT_URLCONF = 'core.urls'
 
