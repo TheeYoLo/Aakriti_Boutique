@@ -39,9 +39,9 @@ const Navbar = () => {
                 <div id='middle'>
                     <ul className="flex gap-4 text-xl" >
                         <Link href="/"><li>Home</li></Link>
-                        <Link href="/about"><li>Collection</li></Link>
-                        <Link href="/about"><li>Stories</li></Link>
                         <Link href="/about"><li>About</li></Link>
+                        <Link href="/products"><li>Products</li></Link>
+                        <Link href="/about"><li>Stories</li></Link>
 
 
 
