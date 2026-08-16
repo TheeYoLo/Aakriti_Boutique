@@ -1,2 +1,28 @@
 @import "tailwindcss";
 
+.price-slider {
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+}
+
+.price-slider::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  border: 1px solid #9e5b47;
+  background: white;
+  cursor: pointer;
+}
+
+.price-slider::-moz-range-thumb {
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  border: 1px solid #9e5b47;
+  background: white;
+  cursor: pointer;
+}

@@ -26,7 +26,6 @@ const FilterGroup = ({
     <>
       <div className="border-b border-gray-200 py-5">
 
-        {/* Heading */}
         <button
           type="button"
           onClick={() => setExpanded(!expanded)}
@@ -43,7 +42,6 @@ const FilterGroup = ({
           )}
         </button>
 
-        {/* Options */}
         {expanded && (
           <div className="mt-4 space-y-3">
 
@@ -72,7 +70,6 @@ const FilterGroup = ({
               </label>
             ))}
 
-            {/* More */}
             {options.length > 4 && (
               <button
                 type="button"
@@ -87,7 +84,6 @@ const FilterGroup = ({
         )}
       </div>
 
-      {/* Modal */}
       {showModal && (
         <FilterOptionsModal
           title={title}
@@ -96,6 +92,7 @@ const FilterGroup = ({
           onClose={() => setShowModal(false)}
           onApply={(options) => {
             onChange(options);
+            setShowModal(false);
           }}
         />
       )}
