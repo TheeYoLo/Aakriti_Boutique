@@ -4,6 +4,9 @@ export type Product = {
   category: string;
   fabric: string;
   collection: string;
+  length: string;
+  colour: string;
+  occasions: string[];
   price: number;
   image: string;
 };
