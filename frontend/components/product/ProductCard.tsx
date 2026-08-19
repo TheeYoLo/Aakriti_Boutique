@@ -1,20 +1,25 @@
 import Image from "next/image";
 import type { Product } from "@/app/types/products";
+import Link from 'next/link'
 
 type ProductCardProps = {
   product: Product;
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { name, category, price, image } = product;
+  const { name, category, price, image, id } = product;
+  const imageSrc: string = Array.isArray(image) ? image[0] : image ?? '/product-saree.webp';
 
   return (
-    <div className="group w-full">
-
+    
+      <Link
+      href={`/products/${id}`}
+      className="group block w-full"
+    >
       {/* Image */}
       <div className="relative h-105 w-full overflow-hidden rounded-xl">
         <Image
-          src={image}
+          src={imageSrc}
           alt={name}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -35,7 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           ₹{price}
         </p>
       </div>
-
-    </div>
+    </Link>
+    
   );
 }
